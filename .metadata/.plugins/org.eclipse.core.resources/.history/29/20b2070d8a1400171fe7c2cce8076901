@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		function showView(obj){
+			//判断是否支持FileReader
+			if(window.FileReader){
+				var reader = new FileReader();
+			}else{
+				alert("不支持FileReader");
+			}
+			var file = obj.files[0];
+			var imageType= /^image\//;
+			//判断是否是图片
+			if(!imageType.test(file)){
+				alert("请选择图片");
+				return;
+			}
+			reader.onload= function(e){
+				//获取dom
+				var img = document.getElementById("imgShow");
+			
+			}
+			
+			
+			
+			
+			
+		}//@ sourceURL=test.js
+	</script>
+	
+</head>
+<body>
+	<img id="imgShow" name="imgShow"/>
+	<input id="imgUpload" name="imgUpload" type="file" onchange="showView(this);"/>
+
+</body>
+</html>
